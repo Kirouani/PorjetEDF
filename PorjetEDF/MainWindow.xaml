@@ -1,0 +1,31 @@
+﻿<Window x:Class="PorjetEDF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PorjetEDF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Authentificcation" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
+        <TextBlock Text="Veuiller saisir vos identifiants" Height="100" Grid.Row="1"></TextBlock>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Login" Grid.Row="2" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Name="txtLogin" Width="200" HorizontalAlignment="Center"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="mot de passe" Grid.Row="3" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox Name="txtMdp" Width="200" HorizontalAlignment="Center"></TextBox>
+        </StackPanel>
+        <Button Name="btnConncetr" Content="Se connecter"  FontSize="30" Height="50"         
+                Grid.Row="4" Click="BtnConncetr_Click"></Button>
+    </Grid>
+</Window>

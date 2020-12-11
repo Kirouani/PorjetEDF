@@ -1,0 +1,69 @@
+﻿<Window x:Class="PorjetEDF.frmConnecter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PorjetEDF"
+        mc:Ignorable="d"
+        Title="frmConnecter" Height="450" Width="800" Loaded="Window_Loaded_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Gestion edf"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30"></TextBlock>
+        <TextBlock Text="Liste des controleurs" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" FontSize="20"></TextBlock>
+        <ListBox Name="lstControleur" Grid.Row="2" Grid.Column="0" SelectionChanged="LstControleur_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="30" Text="{Binding id }"></TextBlock>
+                        <TextBlock Width="200" Text="{Binding nom}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Text="liste des clients" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontSize="20"></TextBlock>
+        <ListBox Name="lstClients" Grid.Row="2" Grid.Column="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100" Text="{Binding identifiant}"></TextBlock>
+                        <TextBlock Width="150" Text="{Binding nom}"></TextBlock>
+                        <TextBlock Width="150" Text="{Binding prenom}"></TextBlock>
+                        <TextBlock Width="30" Text="{Binding ancienReleve}"></TextBlock>
+                        <TextBlock Width="100" Text="{Binding dernierReleve}"></TextBlock>
+                        <TextBlock Width="100" Text="{Binding total}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <WrapPanel Orientation="Vertical" Grid.Row="3">
+            <TextBlock FontSize="20" Width="200" Text="Nom du controlleur" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock FontSize="30" Width="150" Name="txtNom" HorizontalAlignment="Left"></TextBlock>
+        </WrapPanel>
+        <WrapPanel Orientation="Vertical" Grid.Row="4">
+            <TextBlock FontSize="20" Width="200" Text="Prenom Du Controlleur" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock FontSize="30" Width="150" Name="txtPrenom" HorizontalAlignment="Left"></TextBlock>
+        </WrapPanel>
+        <WrapPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1">
+            <TextBlock FontSize="20" Width="200" Text="Nom du client" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock FontSize="30" Width="150" Name="txtNomClient" HorizontalAlignment="Left"></TextBlock>
+        </WrapPanel>
+        <WrapPanel Orientation="Vertical" Grid.Row="4" Grid.Column="1">
+            <TextBlock FontSize="20" Width="200" Text="Prenom Du Client" HorizontalAlignment="Left"></TextBlock>
+            <TextBlock FontSize="30" Width="150" Name="txtPrenomClient" HorizontalAlignment="Left"></TextBlock>
+        </WrapPanel>
+        <Button Name="btnInsererControl" Content="Inserer Un Controlleur" Click="BtnInsererControl_Click" Grid.Row="5" Height="50"></Button>
+        <Button Name="btnInsererClient" Content="Inserer un Client" Click="BtnInsererClient_Click" Grid.Row="5" Grid.Column="1"></Button>
+    </Grid>
+</Window>
